@@ -57,5 +57,5 @@ production:
   database: shorterapp_production
   pool:     5
   username: rails
-  password:
+  password: <%= ENV["DATABASE_PASSWORD"] %>
   template: template0

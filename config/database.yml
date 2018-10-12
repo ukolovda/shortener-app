@@ -56,6 +56,6 @@ production:
   encoding: unicode
   database: shorterapp_production
   pool:     5
-  username: shorterapp
+  username: rails
   password:
   template: template0

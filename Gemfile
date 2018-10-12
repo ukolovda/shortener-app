@@ -36,11 +36,12 @@ gem 'slim-rails'
 gem 'mini_racer'
 # gem 'therubyracer', :platform=>:ruby
 group :development do
-  gem 'capistrano', '~> 3.0.1'
+  gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails', '~> 1.1.0'
   gem 'capistrano-rails-console'
   gem 'capistrano-rvm', '~> 0.1.1'
+  gem 'capistrano3-puma'
   gem 'rails_layout'
 end
 group :development, :test do

@@ -9,7 +9,8 @@ class UrlsController < ApplicationController
   end
 
   def new
-    @url = @urls.build
+    @url = @urls.new
+    3.times { @url.keywords.new }
   end
 
   def create
@@ -50,6 +51,7 @@ class UrlsController < ApplicationController
   end
   
   def url_params
-    params.require(:url).permit(:name, :url, :ref, :extra, :ie)
+    params.require(:url).permit(:name, :url, :ref, :extra, :ie,
+                                keywords_attributes: [:id, :text, :page, :weight, :_destroy])
   end
 end

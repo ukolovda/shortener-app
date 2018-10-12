@@ -32,8 +32,11 @@ class UrlsControllerTest < ActionController::TestCase
   should 'post create' do
     signed_as :one do
       assert_difference 'Url.count' do
-        post :create, params: {url: {name: 'New URL', url: 'http://myurl.com/ref=', ref: 'p_', extra: '123', ie: 'UTF8'}}
-        # puts assigns(:url).errors.inspect
+        assert_difference 'Keyword.count' do
+          post :create, params: {url: {name: 'New URL', url: 'http://myurl.com/ref=', ref: 'p_', extra: '123', ie: 'UTF8',
+                                       keywords_attributes: {'1'=>{text: 'k1', page: 1, weight: 10}}}}
+          # puts assigns(:url).errors.inspect
+        end
       end
       assert_response :redirect
       assert_redirected_to urls_path
@@ -70,7 +73,9 @@ class UrlsControllerTest < ActionController::TestCase
   should 'destroy' do
     signed_as :one do
       assert_difference 'Url.count', -1 do
-        delete :destroy, params: {id: @url.id}
+        assert_difference 'Keyword.count', -2 do
+          delete :destroy, params: {id: @url.id}
+        end
       end
       assert_response :redirect
       assert_redirected_to urls_path

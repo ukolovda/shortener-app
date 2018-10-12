@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text: Key1
+  page: 1
+  weight: 10
+  url: one
+
+two:
+  text: Key2
+  page: 1
+  weight: 20
+  url: one

@@ -10,6 +10,24 @@
         = f.input :extra
       .col-md-2.col-sm-4.col-xs-6
         = f.input :ie
+    .row
+      .col-md-12
+        h2 Keywords:
+    .table-responsive
+      table.table.table-hover
+        thead.thead-light
+          tr
+            th Keyword
+            th Page
+            th Weight
+            th
+        tbody
+          = f.simple_fields_for :keywords do |f|
+            = render 'keyword_fields', f: f
+        tfoot
+          tr
+            td{colspan=4}= link_to_add_fields 'Add keyword', f, :keywords, nil, {class: 'btn btn-light'}
+            / td= link_to 'Add keyword', '', class: 'btn btn-light'
   .form-actions
     .row
       .col-md-12

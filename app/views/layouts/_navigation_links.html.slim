@@ -1,0 +1,6 @@
+/ add navigation links to this file
+
+
+/ li.nav-item= link_to 'Shortener App', root_path
+- if user_signed_in?
+  li.nav-item= link_to 'Sign out', destroy_user_session_path, :method=>'delete', class: 'nav-link'

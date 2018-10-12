@@ -1,0 +1,8 @@
+tr
+  td= row.name
+  td= shortened_url(row)
+  td
+    / .d-flex.justify-content-around
+    / => link_to 'Stats', '#', class: 'btn btn-info'
+    => link_to 'Edit', edit_url_path(row), class: 'btn btn-success'
+    => link_to 'Delete', url_path(row), method: :delete, data: {confirm: 'Delete, are you shure?'}, class: 'btn btn-danger'

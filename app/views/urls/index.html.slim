@@ -1,0 +1,16 @@
+h2 My URLs
+
+.row
+  .col-md-12= link_to 'Create new URL', new_url_path, class: 'btn btn-primary'
+br
+  
+.row
+  .col-md-12.table-responsive
+    table.table.table-striped.table-bordered
+      thead
+        th= 'Name'
+        th= 'Shortened URL'
+        th= 'Commands'
+      tbody
+        = render partial: 'row', collection: @urls
+    

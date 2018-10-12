@@ -3,9 +3,9 @@
 one:
   name: MyString
   shortened_code: a342d1
-  url: MyString
-  ref: MyString
-  extra: MyString
+  url: 'https://amazon.com/ref='
+  ref: ref_
+  extra: extra1
   ie: UTF8
   user: one
 

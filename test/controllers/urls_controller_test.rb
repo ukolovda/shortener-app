@@ -21,11 +21,19 @@ class UrlsControllerTest < ActionController::TestCase
     end
   end
 
+  should 'get show' do
+    signed_as :one do
+      get :show, params: {id: @url}
+      assert_response :success
+      assert_not_nil assigns(:url)
+    end
+  end
+
   should 'get new' do
     signed_as :one do
       get :new
       assert_response :success
-      assert_not_nil assigns(:urls)
+      assert_not_nil assigns(:url)
     end
   end
 
@@ -50,7 +58,7 @@ class UrlsControllerTest < ActionController::TestCase
     signed_as :one do
       get :edit, params: {id: @url.id}
       assert_response :success
-      assert_not_nil assigns(:urls)
+      assert_not_nil assigns(:url)
     end
   end
 
@@ -79,7 +87,7 @@ class UrlsControllerTest < ActionController::TestCase
       end
       assert_response :redirect
       assert_redirected_to urls_path
-      assert_not_nil assigns(:urls)
+      assert_not_nil assigns(:url)
     end
   end
 

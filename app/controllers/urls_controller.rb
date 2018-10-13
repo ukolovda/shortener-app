@@ -8,6 +8,10 @@ class UrlsController < ApplicationController
 
   end
 
+  def show
+    @url = @urls.find(params[:id])
+  end
+  
   def new
     @url = @urls.new
     3.times { @url.keywords.new }

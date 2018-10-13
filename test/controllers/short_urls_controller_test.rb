@@ -7,8 +7,8 @@ class ShortUrlsControllerTest < ActionController::TestCase
   end
   
   should 'show' do
-    get :show, params: {short_code: @url.shortened_code}
     ClickCounter.any_instance.expects(:inc_counter!)
+    get :show, params: {short_code: @url.shortened_code}
     assert_response :redirect
     # assert_redirected_to @url.make_full_url
   end

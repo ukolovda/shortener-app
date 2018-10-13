@@ -17,9 +17,11 @@ class Url < ApplicationRecord
 
   def make_full_url
     keyword = find_keyword
+    keyword.inc_click_counter!
     "#{url}#{ref}#{keyword.page}?#{extra}#{CGI::escape(keyword.text)}&page=#{keyword.page}&ie=#{ie}&qid=#{Time.now.to_i}"
   end
 
+  # @return [Keyword]
   def find_keyword
     make_keywords_for_select.sample
   end

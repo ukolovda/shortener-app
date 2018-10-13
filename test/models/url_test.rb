@@ -45,6 +45,7 @@ class UrlTest < ActiveSupport::TestCase
   
   test 'make_full_url' do
     url = urls(:one)
+    Keyword.any_instance.expects(:inc_click_counter!)
     result = url.make_full_url
     assert_match %r{\Ahttps://amazon.com/ref=ref_[12]\?extra1Key[12]\+[12]&page=[12]&ie=UTF8&qid=\d{10}}, result
   end

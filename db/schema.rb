@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_12_135506) do
+ActiveRecord::Schema.define(version: 2018_10_13_032411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "click_counters", force: :cascade do |t|
+    t.bigint "keyword_id"
+    t.integer "click_count"
+    t.index ["keyword_id"], name: "index_click_counters_on_keyword_id", unique: true
+  end
 
   create_table "keywords", force: :cascade do |t|
     t.string "text", null: false

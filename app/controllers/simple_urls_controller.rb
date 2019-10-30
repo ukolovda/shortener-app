@@ -4,7 +4,7 @@ class SimpleUrlsController < ApplicationController
   before_action :authenticate_user!
   before_action :fill_consts
 
-  PAGE_SIZE = 2
+  PAGE_SIZE = 50
   
   def index
     @simple_urls = @simple_urls.order(:name).page(params[:page]).per(PAGE_SIZE)

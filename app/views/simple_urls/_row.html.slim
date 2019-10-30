@@ -1,0 +1,18 @@
+tr
+  td= row.name
+  td
+    span.data_for_copy
+      = aliased_url(row)
+    .float-right
+      =link_to 'Copy', '#', class: 'btn btn-outline-primary btn-sm copy_value_link'
+  td
+    span.data_for_copy
+      =link_to row.url, row.url, target: '_blank'
+    .float-right
+      = link_to 'Copy', '#', class: 'btn btn-outline-primary btn-sm copy_value_link'
+  td= row.created_at
+  td
+    / .d-flex.justify-content-around
+    / => link_to 'Stats', url_path(row), class: 'btn btn-info'
+    => link_to 'Edit', [:edit, row], class: 'btn btn-success btn-sm'
+    => link_to 'Delete', row, method: :delete, data: {confirm: 'Delete, are you shure?'}, class: 'btn btn-danger btn-sm'

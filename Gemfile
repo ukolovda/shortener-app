@@ -37,6 +37,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'slim-rails'
 gem 'mini_racer'
+gem 'kaminari'
 # gem 'therubyracer', :platform=>:ruby
 group :development do
   gem 'capistrano'

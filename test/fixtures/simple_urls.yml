@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  name: Url 1
+  alias: s123
+  url: 'https://amazon.com/1'
+
+two:
+  user: one
+  name: Url 2
+  alias: s124
+  url: 'https://amazon.com/2'

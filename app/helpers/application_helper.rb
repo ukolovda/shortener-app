@@ -6,6 +6,10 @@ module ApplicationHelper
     "#{root_url}#{url.shortened_code}"
   end
 
+  def aliased_url(url)
+    "#{root_url}#{url.alias}"
+  end
+
   def link_to_add_fields(name = nil, f = nil, association = nil, options = nil, html_options = nil, &block)
     # If a block is provided there is no name attribute and the arguments are
     # shifted with one position to the left. This re-assigns those values.

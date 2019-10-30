@@ -1,0 +1,6 @@
+tr
+  = f.hidden_field :_destroy
+  td.col-lg-8= f.input :text, label: false
+  td.col-lg-1= f.input :page, as: :string, label: false
+  td.col-lg-1= f.input :weight, as: :string, label: false
+  td.col-lg-1= link_to 'Delete', '#', class: 'delete_keywork_link'

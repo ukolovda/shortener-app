@@ -1,0 +1,13 @@
+= simple_form_for @simple_url do |f|
+  .form-inputs
+    = f.input :name
+    .row
+      .col-md-10.col-sm-12
+        = f.input :url
+      .col-md-2.col-sm-12
+        = f.input :alias
+  .form-actions
+    .row
+      .col-md-12
+        => f.submit class: 'btn btn-primary'
+        => link_to 'Cancel', :back, class: 'btn btn-light'

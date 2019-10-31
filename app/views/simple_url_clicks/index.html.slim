@@ -1,0 +1,14 @@
+h2 Simple URLs Clicks
+
+.row
+  .col-md-12.table-responsive
+    table.table.table-striped.table-bordered
+      thead
+        tr
+          / th Index
+          th= SimpleUrl::Click.human_attribute_name(:simple_url)
+          th= SimpleUrl.human_attribute_name(:ip)
+          th= SimpleUrl.human_attribute_name(:clicked_at)
+      tbody
+        = render partial: 'row', collection: @simple_url_clicks
+= paginate @simple_url_clicks

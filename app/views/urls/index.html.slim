@@ -8,9 +8,10 @@ br
   .col-md-12.table-responsive
     table.table.table-striped.table-bordered
       thead
-        th= 'Name'
-        th= 'Shortened URL'
-        th= 'Commands'
+        tr
+          th= 'Name'
+          th= 'Shortened URL'
+          th= 'Commands'
       tbody
         = render partial: 'row', collection: @urls
     

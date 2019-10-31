@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :simple_urls
+  resources :simple_url_clicks, only: [:index]
   resources :urls
 
   get "/:short_code", to: 'short_urls#show', constraints: {short_code: /[0-9a-zA-Z]+/}

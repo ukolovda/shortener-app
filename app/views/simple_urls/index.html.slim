@@ -8,11 +8,12 @@ br
   .col-md-12.table-responsive
     table.table.table-striped.table-bordered
       thead
-        th= SimpleUrl.human_attribute_name(:name)
-        th= SimpleUrl.human_attribute_name(:alias)
-        th= SimpleUrl.human_attribute_name(:url)
-        th= SimpleUrl.human_attribute_name(:created_at)
-        th
+        tr
+          th= SimpleUrl.human_attribute_name(:name)
+          th= SimpleUrl.human_attribute_name(:alias)
+          th= SimpleUrl.human_attribute_name(:url)
+          th= SimpleUrl.human_attribute_name(:created_at)
+          th
       tbody
         = render partial: 'row', collection: @simple_urls
 = paginate @simple_urls

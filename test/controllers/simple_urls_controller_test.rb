@@ -15,7 +15,7 @@ class SimpleUrlsControllerTest < ActionController::TestCase
 
   should 'get index' do
     signed_as :one do
-      get :new
+      get :index
       assert_response :success
       assert_not_nil assigns(:simple_urls)
     end

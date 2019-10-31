@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   has_many :urls, dependent: :destroy
   has_many :simple_urls, dependent: :destroy
+  has_many :simple_url_clicks, source: 'clicks', through: :simple_urls
 
 end

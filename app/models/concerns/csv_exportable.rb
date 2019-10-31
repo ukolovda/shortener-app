@@ -1,5 +1,4 @@
 require 'csv'
-
 module Concerns::CsvExportable
   extend ActiveSupport::Concern
 

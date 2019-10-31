@@ -1,5 +1,6 @@
 class SimpleUrl < ApplicationRecord
   belongs_to :user
+  has_many :clicks, :class_name => 'SimpleUrl::Click'
 
   validates :name, presence: true, uniqueness: {scope: :user_id}
   validates :url, presence: true

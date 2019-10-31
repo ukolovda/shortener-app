@@ -12,9 +12,11 @@ class ShortUrlsControllerTest < ActionController::TestCase
   
   should 'show by simple_url' do
     # ClickCounter.any_instance.expects(:inc_counter!)
-    get :show, params: {short_code: 's123'}
-    assert_response :redirect
-    assert_redirected_to 'https://amazon.com/1'
+    assert_difference 'SimpleUrl::Click.count' do
+      get :show, params: {short_code: 's123'}
+      assert_response :redirect
+      assert_redirected_to 'https://amazon.com/1'
+    end
   end
 
 end

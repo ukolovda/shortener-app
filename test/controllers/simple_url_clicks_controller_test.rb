@@ -17,4 +17,12 @@ class SimpleUrlClicksControllerTest < ActionController::TestCase
     end
   end
 
+  test 'should get index csv' do
+    signed_as :one do
+      get :index, format: :csv
+      assert_response :success
+      assert_not_nil assigns(:simple_url_clicks)
+    end
+  end
+
 end

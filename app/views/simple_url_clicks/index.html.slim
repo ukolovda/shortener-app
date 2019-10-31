@@ -1,6 +1,9 @@
 h2 Simple URLs Clicks
 
 .row
+  .col-md-12
+    = link_to 'Export to CSV', params.permit!.merge(format: :csv)
+.row
   .col-md-12.table-responsive
     table.table.table-striped.table-bordered
       thead

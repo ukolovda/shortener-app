@@ -5,6 +5,9 @@ class SimpleUrlClicksController < ApplicationController
   PAGE_SIZE = 100
   
   def index
+    if params[:simple_url_id].present?
+      @simple_url_clicks = @simple_url_clicks.where(simple_url_id: params[:simple_url_id])
+    end
     @simple_url_clicks = @simple_url_clicks.includes(:simple_url).order(clicked_at: :desc)
     respond_to do |format|
       format.html do

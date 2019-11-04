@@ -1,5 +1,24 @@
 h2 Simple URLs Clicks
 
+form
+  = hidden_field_tag :simple_url_id, @simple_url_id
+  - if @simple_url
+    .row
+      .col-4.col-md-1.col-sm-2
+        = label_tag 'simple_url', 'URL:'
+      .col-8.col-md-2.col-sm-3
+        => @simple_url.name
+  .row
+    .col-4.col-md-1.col-sm-2
+      = label_tag 'begin_date', 'From:'
+    .col-8.col-md-2.col-sm-3
+      = text_field_tag :begin_date, @begin_date.to_s, class: 'date_picker'
+    .col-4.col-md-1.col-sm-2
+      = label_tag 'end_date', 'To:'
+    .col-8.col-md-2.col-sm-3
+      = text_field_tag :end_date, @end_date.to_s, class: 'date_picker'
+    .col-sm-1
+      = submit_tag 'Get data'
 .row
   .col-md-12
     = link_to 'Export to CSV', params.permit!.merge(format: :csv)

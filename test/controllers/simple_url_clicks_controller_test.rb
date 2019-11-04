@@ -17,6 +17,22 @@ class SimpleUrlClicksControllerTest < ActionController::TestCase
     end
   end
 
+  test 'should get index with simple_url_id' do
+    signed_as :one do
+      get :index, params: {simple_url_id: simple_urls(:one).id}
+      assert_response :success
+      assert_not_nil assigns(:simple_url_clicks)
+    end
+  end
+
+  test 'should get index with dates' do
+    signed_as :one do
+      get :index, params: {begin_date: '2019-10-31', end_date: '2019-10-31'}
+      assert_response :success
+      assert_not_nil assigns(:simple_url_clicks)
+    end
+  end
+
   test 'should get index csv' do
     signed_as :one do
       get :index, format: :csv

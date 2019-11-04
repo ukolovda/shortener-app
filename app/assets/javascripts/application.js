@@ -15,4 +15,5 @@
 //= require rails-ujs
 //= require bootstrap-sprockets
 //= require jquery.copy-to-clipboard
+//= require jquery-ui/widgets/datepicker
 //= require_tree .
